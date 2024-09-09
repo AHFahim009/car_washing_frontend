@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useCreateBookingMutation } from "@/redux/api/endpoints/booking.api";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useEffect, useState } from "react";
@@ -8,8 +9,7 @@ const PaymentCallback = () => {
   const location = useLocation();
   const navigate = useNavigate(); // Hook to programmatically navigate
   const [status, setStatus] = useState<string | null>(null);
-  const [transactionId, setTransactionId] = useState<string | null>(null);
-  const [amount, setAmount] = useState<string | null>(null);
+
   const [isPaymentProcessing, setIsPaymentProcessing] = useState(false); // State for payment processing
   const [createBooking, { isLoading, isError }] =
     useCreateBookingMutation();
@@ -20,12 +20,11 @@ const PaymentCallback = () => {
     const fetchBookingData = async () => {
       const queryParams = new URLSearchParams(location.search);
       const paymentStatus = queryParams.get("status");
-      const tranId = queryParams.get("tran_id");
-      const paymentAmount = queryParams.get("amount");
+      // const tranId = queryParams.get("tran_id");
+      // const paymentAmount = queryParams.get("amount");
 
       setStatus(paymentStatus);
-      setTransactionId(tranId);
-      setAmount(paymentAmount);
+
 
       if (paymentStatus === "Successful") {
         setIsPaymentProcessing(true); // Show "Processing" message
