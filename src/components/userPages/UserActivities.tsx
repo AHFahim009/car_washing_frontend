@@ -20,7 +20,7 @@ export default function UserActivities() {
     setShoProfileModal(true)
   }
 
-
+  const cacheBustedUrl = `${photo}?t=${new Date().getTime()}`;
   return (
     <div>
       {/* profile section */}
@@ -48,8 +48,8 @@ export default function UserActivities() {
             <Card className="w-full bg-gradient-to-r from-purple-500 to-blue-600 text-white">
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-                  <Avatar className="w-32 h-32   shadow-lg">
-                    <AvatarImage src={photo} alt={name} />
+                  <Avatar key={cacheBustedUrl} className="w-32 h-32   shadow-lg">
+                    <AvatarImage src={cacheBustedUrl} alt={name} />
                     <AvatarFallback className="">
                       <User className="h-12 w-12 text-purple-700" />
                     </AvatarFallback>
