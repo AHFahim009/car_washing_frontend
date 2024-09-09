@@ -41,9 +41,9 @@ const BookingForm = () => {
     //  store booking schema in redux store:
     dispatch(addBookingData(bookingData as Booking));
     try {
-      console.log("hi i am hitting")
+      console.log("hi i am hitting");
       const response = await axios.post(
-        "http://localhost:8000/api/payment/finalize",
+        "https://car-washing-backend-fxvk.onrender.com/api/payment/finalize",
         // payment credentials request body
         {
           amount: selectedServiceByRedux.price,

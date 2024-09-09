@@ -86,7 +86,7 @@ export default function EditProfileModal({
       open={showProfileModal}
       onOpenChange={() => setShoProfileModal(false)}
     >
-      <DialogContent className="sm:max-w-[425px] h-[600px] overflow-auto">
+      <DialogContent className="sm:max-w-[425px] max-h-[600px] overflow-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center mb-4">
             Edit Profile
