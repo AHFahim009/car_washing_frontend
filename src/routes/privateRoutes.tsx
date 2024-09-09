@@ -1,5 +1,5 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import { ReactNode, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ReactNode, useEffect } from "react";
 import { useAppSelector } from "@/redux/hooks";
 
 type TProps = {
