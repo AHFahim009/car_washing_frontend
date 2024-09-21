@@ -36,8 +36,8 @@ const AddServiceModal = ({ showAddModal, setShowAddModal }: TProps) => {
         setShowAddModal(false);
         toast.success(res.data.message);
       } else {
-        const err = res.error as FetchBaseQueryError
-        const errorRes = err.data as TGenericErrRes
+        const err = res.error as FetchBaseQueryError;
+        const errorRes = err.data as TGenericErrRes;
 
         toast.error(errorRes.message);
       }
@@ -48,7 +48,7 @@ const AddServiceModal = ({ showAddModal, setShowAddModal }: TProps) => {
 
   return (
     <Dialog open={showAddModal}>
-      <DialogContent className="sm:max-w-[425px] h-screen overflow-y-auto">
+      <DialogContent className="sm:max-w-[425px] max-h-screen overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Add New Service</DialogTitle>
           <DialogDescription>
@@ -86,8 +86,7 @@ const AddServiceModal = ({ showAddModal, setShowAddModal }: TProps) => {
           <Button className="w-full">Save</Button>
         </CustomForm>
         <DialogFooter className="ml-auto">
-          <div >
-
+          <div>
             <Button onClick={handleDialogClose} variant="ghost">
               Cancel
             </Button>

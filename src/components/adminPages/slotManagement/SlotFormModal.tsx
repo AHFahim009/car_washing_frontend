@@ -75,7 +75,7 @@ const SlotFormModal = ({ showSLotModal, setShowSlotModal }: TProps) => {
   };
   return (
     <Dialog open={showSLotModal}>
-      <DialogContent className="">
+      <DialogContent className="max-h-screen overflow-y-hidden">
         <DialogHeader>
           <DialogTitle>Car Wash Slot Management</DialogTitle>
           <DialogDescription>

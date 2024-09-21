@@ -9,7 +9,8 @@ type TProps = {
 
 const ReviewCard = ({ reviewData }: TProps) => {
   const { feedback, rating = 3 } = reviewData;
-  const truncatedFeedback = feedback.length > 80 ? feedback.substring(0, 80) + '...' : feedback;
+  const truncatedFeedback =
+    feedback.length > 80 ? feedback.substring(0, 80) + "..." : feedback;
   return (
     <div className=" w-full md:max-w-sm bg-blue-50 border border-gray-200 rounded-lg p-6  md:flex-1 reviewCard ">
       <div className="flex items-center gap-0.5 mb-6">
@@ -17,7 +18,9 @@ const ReviewCard = ({ reviewData }: TProps) => {
           <StarIcon key={i} className="w-5 h-5 fill-primary" />
         ))}
       </div>
-      <p className="text-gray-800 text-lg mb-6 font-mono " >{truncatedFeedback}</p>
+      <p className="text-gray-800 text-lg mb-6 font-mono ">
+        {truncatedFeedback}
+      </p>
       <div className="flex items-center">
         <img
           className="w-12 h-12 rounded-full"
