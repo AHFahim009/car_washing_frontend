@@ -35,7 +35,7 @@ const LoginForm = () => {
                 email: useCredentials.email,
                 role: useCredentials.role,
                 name: response.data.data.name,
-                photo: response.data.data.photo
+                photo: response.data.data.photo,
               },
             })
           );
@@ -55,7 +55,13 @@ const LoginForm = () => {
     }
   };
   return (
-    <CustomForm onSubmit={handleFormSubmit}>
+    <CustomForm
+      onSubmit={handleFormSubmit}
+      defaultValues={{
+        email: "admin@gmail.com",
+        password: "admin",
+      }}
+    >
       <CustomInput
         name="email"
         type="text"
